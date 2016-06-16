@@ -1,2 +1,3 @@
 # pianoHTML5
-testing piano on website
+Piano on website
+with HTML5 canvas
