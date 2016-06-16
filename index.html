@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <link href="css/myStyle.css" rel="stylesheet" type="text/css" />
+    <script src="js/script.js"></script>
+    </head>
+    
+    <body style="background-image:url(media/bgPiano.jpg);background-size:cover;">
+    	
+    	<div class="main">
+        	<div class="child">
+                <center>
+                    <button class="btnCustom2" id="odeToJoy" onClick="getMusicID('odeToJoy')"> <span class="songName">Ode To Joy</span></button>
+                    <button class="btnCustom2" id="canon" onClick="getMusicID('canon')"> <span class="songName">Canon</span></button>
+                    <button class="btnCustom2" id="furElise" onClick="getMusicID('furElise')"> <span class="songName">Fur Elise</span></button>
+                    <button class="btnCustom2" id="notAlone" onClick="getMusicID('notAlone')"> <span class="songName">Not Alone</span></button>
+                    <input class="btnCustom2" type="submit" value="Play" class="button" id="musicStop" onclick="playMusic()" >
+                    <!---
+                    //event listener click
+                    <button type="button" id="odeToJoy">Ode To Joy</button>
+                    <button type="button" id="canon">Canon</button>
+                    <button type="button" id="furElise">Fur Elise</button>
+                    <button type="button" id="notAlone">Not Alone</button>
+                    <input type="submit" value="Play" id="musicStop" />
+                     --->
+                </center>
+            </div>
+            <center>
+                <canvas class="customCvs" height="600" width="1565" id="pianoCvs"></canvas>
+            </center>
+        </div>
+        
+        <!--audio for piano white tuts-->
+        <audio id="C" src="Assets/Tune/C.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D" src="Assets/Tune/D.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="E" src="Assets/Tune/E.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F" src="Assets/Tune/F.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G" src="Assets/Tune/G.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A" src="Assets/Tune/A.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="B" src="Assets/Tune/B.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <audio id="C'" src="Assets/Tune/C'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D'" src="Assets/Tune/D'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="E'" src="Assets/Tune/E'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F'" src="Assets/Tune/F'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G'" src="Assets/Tune/G'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A'" src="Assets/Tune/A'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="B'" src="Assets/Tune/B'.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <audio id="C''" src="Assets/Tune/C''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D''" src="Assets/Tune/D''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="E''" src="Assets/Tune/E''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F''" src="Assets/Tune/F''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G''" src="Assets/Tune/G''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A''" src="Assets/Tune/A''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="B''" src="Assets/Tune/B''.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <audio id="C'''" src="Assets/Tune/C'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D'''" src="Assets/Tune/D'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="E'''" src="Assets/Tune/E'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F'''" src="Assets/Tune/F'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G'''" src="Assets/Tune/G'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A'''" src="Assets/Tune/A'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="B'''" src="Assets/Tune/B'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <!--audio for piano black tuts-->
+        <audio id="C#" src="Assets/Tune/C%23.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D#" src="Assets/Tune/D%23.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F#" src="Assets/Tune/F%23.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G#" src="Assets/Tune/G%23.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A#" src="Assets/Tune/A%23.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <audio id="C#'" src="Assets/Tune/C%23'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D#'" src="Assets/Tune/D%23'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F#'" src="Assets/Tune/F%23'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G#'" src="Assets/Tune/G%23'.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A#'" src="Assets/Tune/A%23'.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <audio id="C#''" src="Assets/Tune/C%23''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D#''" src="Assets/Tune/D%23''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F#''" src="Assets/Tune/F%23''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G#''" src="Assets/Tune/G%23''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A#''" src="Assets/Tune/A%23''.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <audio id="C#'''" src="Assets/Tune/C%23'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="D#'''" src="Assets/Tune/D%23'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="F#'''" src="Assets/Tune/F%23'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="G#'''" src="Assets/Tune/G%23'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        <audio id="A#'''" src="Assets/Tune/A%23'''.mp3" type="audio/mpeg" preload="auto"></audio>
+        
+        <!--audio for play music-->
+        <audio id="music1" src="Assets/Music/Ode To Joy.mp3" type="audio/mpeg" ></audio>
+        <audio id="music2" src="Assets/Music/Canon.mp3" type="audio/mpeg" ></audio>
+        <audio id="music3" src="Assets/Music/Für Elise.mp3" type="audio/mpeg" ></audio>
+        <audio id="music4" src="Assets/Music/Not Alone.mp3" type="audio/mpeg" ></audio>
+    </body>
+</html>
